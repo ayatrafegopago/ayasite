@@ -4,6 +4,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export default function Accordion({
   items,
   containerClassName = "",
@@ -11,15 +21,28 @@ export default function Accordion({
   titleClassName = "",
   descriptionClassName = "",
   chevronClassName = "",
+  stagger = false,
 }) {
   const [openIndex, setOpenIndex] = useState(null);
 
+  const Wrapper = stagger ? motion.div : "div";
+  const Item = stagger ? motion.div : "div";
+  const wrapperProps = stagger
+    ? {
+        variants: containerVariants,
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: false, amount: 0.2 },
+      }
+    : {};
+  const itemProps = stagger ? { variants: itemVariants } : {};
+
   return (
-    <div className={containerClassName}>
+    <Wrapper className={containerClassName} {...wrapperProps}>
       {items.map((it, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={it.title} className={itemClassName}>
+          <Item key={it.title} className={itemClassName} {...itemProps}>
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -48,9 +71,9 @@ export default function Accordion({
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </Item>
         );
       })}
-    </div>
+    </Wrapper>
   );
 }

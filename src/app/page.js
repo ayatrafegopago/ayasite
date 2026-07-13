@@ -6,9 +6,9 @@ import ApresentacaoSolucao from "@/components/sections/home/ApresentacaoSolucao"
 import ComoFunciona from "@/components/sections/home/ComoFunciona";
 import ServicosResumo from "@/components/sections/home/ServicosResumo";
 import Diferenciais from "@/components/sections/home/Diferenciais";
-import ResultadosPreview from "@/components/sections/home/ResultadosPreview";
 import ParaQuemE from "@/components/sections/home/ParaQuemE";
 import SobrePreview from "@/components/sections/home/SobrePreview";
+import ProjetosIndicadores from "@/components/sections/home/ProjetosIndicadores";
 import CtaDiagnostico from "@/components/sections/home/CtaDiagnostico";
 import Faq from "@/components/sections/home/Faq";
 import ChamadaFinal from "@/components/sections/home/ChamadaFinal";
@@ -26,7 +26,7 @@ export default function Home() {
       <Diferenciais />
       <ParaQuemE />
       <SobrePreview />
-      <ResultadosPreview />
+      <ProjetosIndicadores />
       <CtaDiagnostico />
       <Faq />
       <ChamadaFinal />

@@ -7,8 +7,20 @@ const variants = {
   "outline-light": "border border-[#FFFDFC]/40 text-[#FFFDFC] hover:bg-[#FFFDFC]/10",
 };
 
-export default function Button({ href, children, variant = "primary", className = "", ...props }) {
-  const classes = `inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-colors ${variants[variant]} ${className}`;
+const sizes = {
+  md: "px-6 py-3 text-sm",
+  lg: "px-10 py-5 text-base sm:text-lg",
+};
+
+export default function Button({
+  href,
+  children,
+  variant = "primary",
+  size = "md",
+  className = "",
+  ...props
+}) {
+  const classes = `inline-flex items-center justify-center rounded-full font-medium transition-colors ${sizes[size]} ${variants[variant]} ${className}`;
 
   if (href) {
     return (
