@@ -58,6 +58,12 @@ export default function FormularioDiagnostico() {
       if (response.ok) {
         setStatus("success");
         form.reset();
+
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-18321251823/Du02CMGK5M8cEO-7oKBE",
+          });
+        }
       } else {
         setStatus("error");
       }
