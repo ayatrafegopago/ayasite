@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-sm text-[#E3D3B4]/80">
             Gestão de tráfego pago e presença digital para negócios locais e
-            prestadores de serviço em Porto Alegre e região.
+            prestadores de serviço em todo o Brasil, com atendimento remoto.
           </p>
         </div>
 

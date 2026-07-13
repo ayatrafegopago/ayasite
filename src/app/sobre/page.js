@@ -1,4 +1,10 @@
-import AnimatedSection, { AnimatedTitle } from "@/components/ui/AnimatedSection";
+import SobreIntro from "@/components/sections/sobre/SobreIntro";
+import SobreVenn from "@/components/sections/sobre/SobreVenn";
+import SobreTrajetoria from "@/components/sections/sobre/SobreTrajetoria";
+import SobreOrigem from "@/components/sections/sobre/SobreOrigem";
+import SobreVisaoGrid from "@/components/sections/sobre/SobreVisaoGrid";
+import SobreParaQuem from "@/components/sections/sobre/SobreParaQuem";
+import SobreCtaFinal from "@/components/sections/sobre/SobreCtaFinal";
 
 export const metadata = {
   title: "Sobre | Aya Tráfego Pago",
@@ -6,11 +12,14 @@ export const metadata = {
 
 export default function SobrePage() {
   return (
-    <AnimatedSection className="mx-auto max-w-4xl px-6 py-16">
-      <AnimatedTitle as="h1" className="text-3xl font-bold text-[#123B46]">
-        Sobre
-      </AnimatedTitle>
-      <p className="mt-4 text-[#202629]/70">Conteúdo em construção.</p>
-    </AnimatedSection>
+    <>
+      <SobreIntro />
+      <SobreVenn />
+      <SobreTrajetoria />
+      <SobreOrigem />
+      <SobreVisaoGrid />
+      <SobreParaQuem />
+      <SobreCtaFinal />
+    </>
   );
 }

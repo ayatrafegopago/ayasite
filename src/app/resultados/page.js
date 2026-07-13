@@ -1,6 +1,10 @@
-import AnimatedSection, { AnimatedTitle } from "@/components/ui/AnimatedSection";
-import CaseCard from "@/components/sections/resultados/CaseCard";
-import { projetos } from "@/data/projetos";
+import ResultadosWatermark from "@/components/sections/resultados/ResultadosWatermark";
+import ResultadosIntro from "@/components/sections/resultados/ResultadosIntro";
+import ResultadosMetricas from "@/components/sections/resultados/ResultadosMetricas";
+import ResultadosImagens from "@/components/sections/resultados/ResultadosImagens";
+import ResultadosProcesso from "@/components/sections/resultados/ResultadosProcesso";
+import ResultadosRelatorio from "@/components/sections/resultados/ResultadosRelatorio";
+import ResultadosCtaFinal from "@/components/sections/resultados/ResultadosCtaFinal";
 
 export const metadata = {
   title: "Resultados | Aya Tráfego Pago",
@@ -8,19 +12,14 @@ export const metadata = {
 
 export default function ResultadosPage() {
   return (
-    <AnimatedSection className="mx-auto max-w-6xl px-6 py-16">
-      <AnimatedTitle as="h1" className="text-3xl font-bold text-[#123B46]">
-        Resultados
-      </AnimatedTitle>
-      {projetos.length === 0 ? (
-        <p className="mt-4 text-[#202629]/70">Cases em construção.</p>
-      ) : (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {projetos.map((projeto) => (
-            <CaseCard key={projeto.slug} projeto={projeto} />
-          ))}
-        </div>
-      )}
-    </AnimatedSection>
+    <div className="relative isolate overflow-hidden bg-[#E3D3B4]">
+      <ResultadosWatermark />
+      <ResultadosIntro />
+      <ResultadosMetricas />
+      <ResultadosImagens />
+      <ResultadosProcesso />
+      <ResultadosRelatorio />
+      <ResultadosCtaFinal />
+    </div>
   );
 }

@@ -1,6 +1,9 @@
-import AnimatedSection, { AnimatedTitle } from "@/components/ui/AnimatedSection";
-import ServicoDetalhado from "@/components/sections/solucoes/ServicoDetalhado";
-import { servicos } from "@/data/servicos";
+import SolucoesWatermark from "@/components/sections/solucoes/SolucoesWatermark";
+import SolucoesIntro from "@/components/sections/solucoes/SolucoesIntro";
+import SolucoesPacote from "@/components/sections/solucoes/SolucoesPacote";
+import SolucoesAdicional from "@/components/sections/solucoes/SolucoesAdicional";
+import SolucoesInvestimento from "@/components/sections/solucoes/SolucoesInvestimento";
+import SolucoesCtaFinal from "@/components/sections/solucoes/SolucoesCtaFinal";
 
 export const metadata = {
   title: "Soluções | Aya Tráfego Pago",
@@ -8,15 +11,13 @@ export const metadata = {
 
 export default function SolucoesPage() {
   return (
-    <AnimatedSection className="mx-auto max-w-6xl px-6 py-16">
-      <AnimatedTitle as="h1" className="text-3xl font-bold text-[#123B46]">
-        Soluções
-      </AnimatedTitle>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {servicos.map((servico) => (
-          <ServicoDetalhado key={servico.slug} servico={servico} />
-        ))}
-      </div>
-    </AnimatedSection>
+    <div className="relative isolate overflow-hidden bg-[#123B46]">
+      <SolucoesWatermark />
+      <SolucoesIntro />
+      <SolucoesPacote />
+      <SolucoesAdicional />
+      <SolucoesInvestimento />
+      <SolucoesCtaFinal />
+    </div>
   );
 }
