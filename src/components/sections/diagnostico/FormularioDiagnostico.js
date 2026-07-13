@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpqvzwjg";
@@ -39,6 +40,7 @@ const fieldClass =
   "mt-1 w-full rounded-lg border border-black/5 bg-[#FFFDFC] px-4 py-2 text-[#202629] placeholder:text-[#202629]/40 focus:outline-none focus:ring-2 focus:ring-[#E7664C]";
 
 export default function FormularioDiagnostico() {
+  const router = useRouter();
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
 
   async function handleSubmit(e) {
@@ -64,6 +66,8 @@ export default function FormularioDiagnostico() {
             send_to: "AW-18321251823/Du02CMGK5M8cEO-7oKBE",
           });
         }
+
+        router.push("/diagnostico?enviado=true", { scroll: false });
       } else {
         setStatus("error");
       }
