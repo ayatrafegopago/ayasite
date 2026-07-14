@@ -20,7 +20,7 @@ export default function SobrePreview() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <Image
-            src="/fotos/aya-6.png"
+            src="/fotos/aya-18.png"
             alt="Amanda, gestora de tráfego pago da Aya"
             fill
             className="object-cover"

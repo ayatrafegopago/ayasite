@@ -35,7 +35,7 @@ export default function SobreIntro() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <Image
-            src="/fotos/aya-6.png"
+            src="/fotos/aya-18.png"
             alt="Amanda, fundadora da Aya"
             fill
             className="object-cover"

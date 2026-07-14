@@ -69,7 +69,11 @@ export default function ProjetosIndicadores() {
         </AnimatedSubtitle>
       </div>
 
-      <div className="mt-12 overflow-hidden">
+      <div className="mt-10 px-6 text-right">
+        <span className="text-xs text-[#202629]/40">Exemplos ilustrativos</span>
+      </div>
+
+      <div className="mt-2 overflow-hidden">
         <motion.div
           ref={trackRef}
           className="flex w-max gap-6 px-6"
