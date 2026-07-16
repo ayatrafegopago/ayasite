@@ -69,6 +69,22 @@ export default function SobreVisaoGrid() {
             );
           })}
         </motion.div>
+
+        <motion.p
+          className="mx-auto mt-14 max-w-2xl text-center text-[#202629]/80"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.4 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          Essa forma de trabalhar foi formalizada no{" "}
+          <span className="font-semibold text-[#123B46]">
+            Método HUMANO
+          </span>{" "}
+          — a metodologia própria da Aya, que une hipótese, comportamento,
+          comunicação, aquisição, nutrição e otimização em um mesmo
+          processo.
+        </motion.p>
       </div>
     </AnimatedSection>
   );

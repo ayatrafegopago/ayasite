@@ -1,5 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
   { href: "/", label: "Início" },
@@ -10,11 +15,13 @@ const links = [
 ];
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FFFDFC]/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
             <span className="relative h-9 w-9">
               <Image
                 src="/logo/logo-aya-3.png"
@@ -45,7 +52,42 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        <button
+          type="button"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#123B46] text-white transition-colors hover:bg-[#0d2c34] md:hidden"
+        >
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden border-t border-black/10 md:hidden"
+          >
+            <div className="flex flex-col gap-2 px-6 py-4">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-full bg-[#123B46] px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-[#0d2c34]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

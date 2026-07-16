@@ -66,6 +66,16 @@ export default function Hero() {
               Converse com Nossa Equipe
             </Button>
           </div>
+
+          <motion.p
+            className={`${dmSans.className} mt-5 text-xs tracking-wide text-[#E7664C]/80`}
+            style={{ fontStyle: "italic" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.75, ease: "easeOut" }}
+          >
+            Método HUMANO: dados mostram o caminho, pessoas tomam a decisão.
+          </motion.p>
         </div>
 
         <div className="relative mx-auto h-72 w-72 sm:h-96 sm:w-96 lg:mx-0 lg:h-[30rem] lg:w-full">
