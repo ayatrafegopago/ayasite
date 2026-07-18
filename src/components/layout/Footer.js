@@ -49,7 +49,7 @@ export default function Footer() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <a
-                href="https://wa.me/5551982414249"
+                href="https://wa.me/5551982414249?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20de%20Aya%20Tr%C3%A1fego%20Pago"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#FFFDFC]"
